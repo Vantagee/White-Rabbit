@@ -118,8 +118,18 @@
 
             <ul class="our-houses__list flex">
                 <li class="our-houses__list-item">
-                    <img src="img/our-houses-img-1.jpg" alt="Дом 1"
-                         class="gallery__img our-houses__img" data-house="house-1">
+                    <div class="our-houses__img-wrapper">
+                        <img src="img/our-houses-img-1.jpg" alt="Дом 1"
+                             class="gallery__img our-houses__img" data-house="house-1">
+
+                        <a class="arrow-left">
+                            &#10094
+                        </a>
+
+                        <a class="arrow-right">
+                            &#10095
+                        </a>
+                    </div>
 
                     <div class="our-houses__wrapper">
                         <h3 class="section-title our-houses__sub-subtitle">Дом шалаш</h3>
@@ -135,8 +145,18 @@
                 </li>
 
                 <li class="our-houses__list-item">
-                    <img src="img/our-houses-img-2.jpg" alt="Дом 2"
-                         class="gallery__img our-houses__img" data-house="house-2">
+                    <div class="our-houses__img-wrapper">
+                        <img src="img/our-houses-img-2.jpg" alt="Дом 2"
+                             class="gallery__img our-houses__img" data-house="house-2">
+
+                        <a class="arrow-left">
+                            &#10094
+                        </a>
+
+                        <a class="arrow-right">
+                            &#10095
+                        </a>
+                    </div>
 
                     <div class="our-houses__wrapper">
                         <h3 class="section-title our-houses__sub-subtitle">Дом с баней</h3>
@@ -339,16 +359,16 @@
     // Открытие модального окна при клике на изображение
     galleryImages.forEach(img => {
         img.addEventListener('click', () => {
-            currentHouse = img.dataset.house;  // Определяем, на какой дом кликнули
-            currentIndex = houses[currentHouse].indexOf(img.getAttribute('src'));  // Получаем индекс изображения
-            openModal();  // Открываем модальное окно
+            currentHouse = img.dataset.house;
+            currentIndex = houses[currentHouse].indexOf(img.getAttribute('src'));
+            openModal();
         });
     });
 
     // Функция для открытия модального окна
     function openModal() {
         modal.style.display = 'flex';
-        modalImg.src = houses[currentHouse][currentIndex];  // Показываем текущее изображение
+        modalImg.src = houses[currentHouse][currentIndex];
     }
 
     // Закрытие модального окна
@@ -356,32 +376,70 @@
         modal.style.display = 'none';
     }
 
-    // Переключение изображений по стрелкам
+    // Переключение изображений в модальном окне
     function changeImage(direction) {
         currentIndex += direction;
-        if (currentIndex < 0) currentIndex = houses[currentHouse].length - 1;  // Зацикливаем на первом изображении
-        if (currentIndex >= houses[currentHouse].length) currentIndex = 0;  // Зацикливаем на последнем изображении
-        modalImg.src = houses[currentHouse][currentIndex];  // Обновляем изображение
+        if (currentIndex < 0) currentIndex = houses[currentHouse].length - 1;
+        if (currentIndex >= houses[currentHouse].length) currentIndex = 0;
+        modalImg.src = houses[currentHouse][currentIndex];
     }
 
-    // Обработчики событий для кнопок
+    // Обработчики событий для кнопок в модальном окне
     closeBtn.addEventListener('click', closeModal);
-    prevBtn.addEventListener('click', () => changeImage(-1)); // Переключение на предыдущее изображение
-    nextBtn.addEventListener('click', () => changeImage(1));  // Переключение на следующее изображение
+    prevBtn.addEventListener('click', () => changeImage(-1));
+    nextBtn.addEventListener('click', () => changeImage(1));
 
     // Закрытие модального окна при клике вне изображения
     window.addEventListener('click', (event) => {
         if (event.target === modal) closeModal();
     });
 
-    // Листание изображений с помощью клавиатуры (← и →)
+    // Листание изображений с помощью клавиатуры
     document.addEventListener('keydown', (event) => {
         if (modal.style.display === 'flex') {
             if (event.key === 'ArrowLeft') changeImage(-1);
             if (event.key === 'ArrowRight') changeImage(1);
-            if (event.key === 'Escape') closeModal();  // Закрытие модалки с клавиатуры
+            if (event.key === 'Escape') closeModal();
         }
     });
+
+    // Переключение изображений с помощью стрелок на странице
+    const houseImagesWrappers = document.querySelectorAll('.our-houses__img-wrapper');
+
+    houseImagesWrappers.forEach(wrapper => {
+        const leftArrow = wrapper.querySelector('.arrow-left');
+        const rightArrow = wrapper.querySelector('.arrow-right');
+        const img = wrapper.querySelector('.gallery__img');
+
+        leftArrow.addEventListener('click', () => {
+            changeImageOnPage(wrapper, -1);
+        });
+
+        rightArrow.addEventListener('click', () => {
+            changeImageOnPage(wrapper, 1);
+        });
+    });
+
+    // Переключение изображений на странице
+    function changeImageOnPage(wrapper, direction) {
+        const img = wrapper.querySelector('.gallery__img');
+        currentHouse = img.dataset.house;
+        currentIndex = houses[currentHouse].indexOf(img.getAttribute('src'));
+        currentIndex += direction;
+
+        if (currentIndex < 0) currentIndex = houses[currentHouse].length - 1;
+        if (currentIndex >= houses[currentHouse].length) currentIndex = 0;
+
+        // Обновляем изображение
+        img.src = houses[currentHouse][currentIndex];
+    }
+
+
+
+
+
+
+
 
 
 </script>
