@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
+    <title>White Rabbit</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
+
+    <link rel="preload" href="/fonts/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="/fonts/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<body>
+<header class="header">
+    <div class="container header__container flex">
+        <a href="#" class="header__logo-link">
+            <img src="img/logo.png" alt="логотип" class="header__logo">
+        </a>
+
+        <nav class="header__nav">
+            <ul class="header__list flex">
+                <li class="header__list-item">
+                    <a href="#about-us" class="header__item-link">
+                        О нас
+                    </a>
+                </li>
+
+                <li class="header__list-item">
+                    <a href="#our-houses" class="header__item-link">
+                        Наши дома
+                    </a>
+                </li>
+
+                <li class="header__list-item">
+                    <a href="#reservation" class="header__item-link">
+                        Забронировать отдых
+                    </a>
+                </li>
+
+                <li class="header__list-item">
+                    <a href="#contacts" class="header__item-link">
+                        Контакты
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <a href="#" class="section-link header__link">
+            Забронировать
+        </a>
+    </div>
+</header>
+
+<main class="main">
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-img">
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+    </div>
+
+    <section class="section hero__section">
+        <div class="container hero__container">
+            <h1 class="section-title hero__title">
+                Уют на берегу Валдайского озера
+            </h1>
+
+            <p class="hero__descr">
+                Добро пожаловать в мир спокойствия и уединения! Наслаждайтесь отдыхом в наших уютных домах,
+                расположенных прямо на берегу живописного Валдайского озера. Окунитесь в атмосферу природы, уюта и
+                комфорта. Каждый дом оснащён всем необходимым для вашего отдыха: терраса для шашлыков, баня и
+                горячая
+                купель под открытым небом. Здесь можно забыть о суете и наслаждаться каждым моментом. Откройте для
+                себя
+                новый уровень отдыха на природе.
+            </p>
+
+            <a href="#reservation" class="section-link hero__link">
+                Забронировать
+            </a>
+        </div>
+    </section>
+
+    <section class="section about-us__section" id="about-us">
+        <div class="container">
+            <h2 class="section-title about-us__subtitle">
+                О нас
+            </h2>
+
+            <p class="about-us__descr">
+                <span class="about-us__descr-part">
+                    White Rabbit — это место, где природа и комфорт сливаются в идеальной гармонии. Наши дома расположены на
+                    берегу Валдайского озера, окружённые живописными пейзажами и чистым воздухом. Это отличное место для
+                    тех, кто хочет отдохнуть и восстановить силы, не удаляясь далеко от города.
+                </span>
+
+                <span class="about-us__descr-part">
+                    Каждый дом был спроектирован с заботой о вашем комфорте и уюте. Внутреннее пространство наполнено
+                    теплотой и продуманными деталями, а внешний вид наших домов органично вписывается в природу. Мы
+                    позаботились о том, чтобы создать идеальные условия для отдыха: терраса для шашлыков у дома с баней и
+                    горячая купель под открытым небом — для тех, кто ищет уединение и расслабление.
+                </span>
+
+                <span class="about-us__descr-part">
+                    Здесь можно наслаждаться тишиной, прогулками вдоль озера и чудесными закатами. White Rabbit — это не
+                    просто место для ночлега, это пространство для вдохновения и восстановления душевного равновесия, где
+                    природа и комфорт идут рука об руку.
+                </span>
+            </p>
+        </div>
+    </section>
+
+    <section class="section our-houses" id="our-houses">
+        <div class="container">
+            <h2 class="section-title our-houses__subtitle">Наши дома</h2>
+
+            <ul class="our-houses__list flex">
+                <li class="our-houses__list-item">
+                    <img src="img/our-houses-img-1.jpg" alt="Дом 1"
+                         class="gallery__img our-houses__img" data-house="house-1">
+
+                    <div class="our-houses__wrapper">
+                        <h3 class="section-title our-houses__sub-subtitle">Дом шалаш</h3>
+
+                        <p class="our-houses__descr">
+                            Шалаш у озера – уютное место для отдыха до 3 человек. В нем есть
+                            купель для расслабления и место для приятных посиделок на свежем воздухе. Наслаждайтесь
+                            природой и тишиной у озера, создавая незабываемые моменты в этом необычном доме.
+                        </p>
+
+                        <a href="#reservation" class="section-link our-houses__link">Забронировать</a>
+                    </div>
+                </li>
+
+                <li class="our-houses__list-item">
+                    <img src="img/our-houses-img-2.jpg" alt="Дом 2"
+                         class="gallery__img our-houses__img" data-house="house-2">
+
+                    <div class="our-houses__wrapper">
+                        <h3 class="section-title our-houses__sub-subtitle">Дом с баней</h3>
+
+                        <p class="our-houses__descr">
+                            Дом с баней у озера – идеален для отдыха до 5 человек. В доме есть
+                            уютная баня, терраса для шашлыков и место для парковки автомобиля. Наслаждайтесь природой у
+                            озера и комфортом, который обеспечит этот уютный уголок для отдыха.
+                        </p>
+
+                        <a href="#reservation" class="section-link our-houses__link">Забронировать</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section reservation__section" id="reservation">
+
+    </section>
+</main>
+
+<footer class="footer" id="contacts">
+    <div class="container">
+        <h2 class="section-title footer__subtitle">
+            Контакты
+        </h2>
+
+        <address class="footer__contacts">
+            <ul class="footer__list flex">
+                <li class="footer__list-item block-1">
+                    <h3 class="section-title footer__sub-subtitle">
+                        Телефон:
+                    </h3>
+
+                    <ul class="footer__list-block-1 flex">
+                        <li class="footer__list-item-block-1">
+                            <h4 class="section-title footer__sub-sub-subtitle">
+                                Собственник:
+                            </h4>
+
+                            <a href="tel:+79633331198" class="footer__num">
+                                +7 (963) 333-11-98
+                            </a>
+                        </li>
+
+                        <li class="footer__list-item-block-1">
+                            <h4 class="section-title footer__sub-sub-subtitle">
+                                Администратор:
+                            </h4>
+
+                            <a href="tel:+79539060606" class="footer__num">
+                                +7 (953) 906-06-06
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="footer__list-item block-2">
+                    <h3 class="section-title footer__sub-subtitle">
+                        Аддрес:
+                    </h3>
+
+                    <p class="footer__address">
+                        г. Валдай
+                    </p>
+                </li>
+
+                <li class="footer__list-item  block-3">
+                    <h3 class="section-title footer__sub-subtitle">
+                        Соцсети:
+                    </h3>
+
+                    <ul class="footer__list-block-3 flex">
+                        <li class="footer__list-item-block-3">
+                            <a href="https://www.instagram.com/white_rabbit_valday/?igsh=MTMyZHhiZWtpYzVsZQ%3D%3D#"
+                               class="footer__social-link" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px">
+                                    <radialGradient id="yOrnnhliCrdS2gy~4tD8ma" cx="19.38" cy="42.035" r="44.899"
+                                                    gradientUnits="userSpaceOnUse">
+                                        <stop offset="0" stop-color="#fd5"/>
+                                        <stop offset=".328" stop-color="#ff543f"/>
+                                        <stop offset=".348" stop-color="#fc5245"/>
+                                        <stop offset=".504" stop-color="#e64771"/>
+                                        <stop offset=".643" stop-color="#d53e91"/>
+                                        <stop offset=".761" stop-color="#cc39a4"/>
+                                        <stop offset=".841" stop-color="#c837ab"/>
+                                    </radialGradient>
+                                    <path fill="url(#yOrnnhliCrdS2gy~4tD8ma)"
+                                          d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/>
+                                    <radialGradient id="yOrnnhliCrdS2gy~4tD8mb" cx="11.786" cy="5.54" r="29.813"
+                                                    gradientTransform="matrix(1 0 0 .6663 0 1.849)"
+                                                    gradientUnits="userSpaceOnUse">
+                                        <stop offset="0" stop-color="#4168c9"/>
+                                        <stop offset=".999" stop-color="#4168c9" stop-opacity="0"/>
+                                    </radialGradient>
+                                    <path fill="url(#yOrnnhliCrdS2gy~4tD8mb)"
+                                          d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"/>
+                                    <path fill="#fff"
+                                          d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"/>
+                                    <circle cx="31.5" cy="16.5" r="1.5" fill="#fff"/>
+                                    <path fill="#fff"
+                                          d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"/>
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li class="footer__list-item-block-3">
+                            <a href="https://vk.com/white_rabbit_valday" class="footer__social-link" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px">
+                                    <path fill="#1976d2" d="M24,4C13,4,4,13,4,24s9,20,20,20s20-9,20-20S35,4,24,4z"/>
+                                    <path fill="#fff"
+                                          d="M25.2,33.2c-9,0-14.1-6.1-14.3-16.4h4.5c0.1,7.5,3.5,10.7,6.1,11.3V16.8h4.2v6.5c2.6-0.3,5.3-3.2,6.2-6.5h4.2	c-0.7,4-3.7,7-5.8,8.2c2.1,1,5.5,3.6,6.7,8.2h-4.7c-1-3.1-3.5-5.5-6.8-5.9v5.9H25.2z"/>
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li class="footer__list-item-block-3">
+                            <a href="https://web.telegram.org/k/#@white_rabbit_valday" class="footer__social-link"
+                               target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px">
+                                    <path fill="#29b6f6" d="M24 4A20 20 0 1 0 24 44A20 20 0 1 0 24 4Z"/>
+                                    <path fill="#fff"
+                                          d="M33.95,15l-3.746,19.126c0,0-0.161,0.874-1.245,0.874c-0.576,0-0.873-0.274-0.873-0.274l-8.114-6.733 l-3.97-2.001l-5.095-1.355c0,0-0.907-0.262-0.907-1.012c0-0.625,0.933-0.923,0.933-0.923l21.316-8.468 c-0.001-0.001,0.651-0.235,1.126-0.234C33.667,14,34,14.125,34,14.5C34,14.75,33.95,15,33.95,15z"/>
+                                    <path fill="#b0bec5"
+                                          d="M23,30.505l-3.426,3.374c0,0-0.149,0.115-0.348,0.12c-0.069,0.002-0.143-0.009-0.219-0.043 l0.964-5.965L23,30.505z"/>
+                                    <path fill="#cfd8dc"
+                                          d="M29.897,18.196c-0.169-0.22-0.481-0.26-0.701-0.093L16,26c0,0,2.106,5.892,2.427,6.912 c0.322,1.021,0.58,1.045,0.58,1.045l0.964-5.965l9.832-9.096C30.023,18.729,30.064,18.416,29.897,18.196z"/>
+                                </svg>
+                            </a>
+                        </li>
+
+                        <li class="footer__list-item-block-3">
+                            <a href="https://wa.me/79633331198" class="footer__social-link" target="_blank">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px"
+                                     fill-rule="evenodd" clip-rule="evenodd">
+                                    <path fill="#fff"
+                                          d="M4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98c-0.001,0,0,0,0,0h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303z"/>
+                                    <path fill="#fff"
+                                          d="M4.868,43.803c-0.132,0-0.26-0.052-0.355-0.148c-0.125-0.127-0.174-0.312-0.127-0.483l2.639-9.636c-1.636-2.906-2.499-6.206-2.497-9.556C4.532,13.238,13.273,4.5,24.014,4.5c5.21,0.002,10.105,2.031,13.784,5.713c3.679,3.683,5.704,8.577,5.702,13.781c-0.004,10.741-8.746,19.48-19.486,19.48c-3.189-0.001-6.344-0.788-9.144-2.277l-9.875,2.589C4.953,43.798,4.911,43.803,4.868,43.803z"/>
+                                    <path fill="#cfd8dc"
+                                          d="M24.014,5c5.079,0.002,9.845,1.979,13.43,5.566c3.584,3.588,5.558,8.356,5.556,13.428c-0.004,10.465-8.522,18.98-18.986,18.98h-0.008c-3.177-0.001-6.3-0.798-9.073-2.311L4.868,43.303l2.694-9.835C5.9,30.59,5.026,27.324,5.027,23.979C5.032,13.514,13.548,5,24.014,5 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974C24.014,42.974,24.014,42.974,24.014,42.974 M24.014,4C24.014,4,24.014,4,24.014,4C12.998,4,4.032,12.962,4.027,23.979c-0.001,3.367,0.849,6.685,2.461,9.622l-2.585,9.439c-0.094,0.345,0.002,0.713,0.254,0.967c0.19,0.192,0.447,0.297,0.711,0.297c0.085,0,0.17-0.011,0.254-0.033l9.687-2.54c2.828,1.468,5.998,2.243,9.197,2.244c11.024,0,19.99-8.963,19.995-19.98c0.002-5.339-2.075-10.359-5.848-14.135C34.378,6.083,29.357,4.002,24.014,4L24.014,4z"/>
+                                    <path fill="#40c351"
+                                          d="M35.176,12.832c-2.98-2.982-6.941-4.625-11.157-4.626c-8.704,0-15.783,7.076-15.787,15.774c-0.001,2.981,0.833,5.883,2.413,8.396l0.376,0.597l-1.595,5.821l5.973-1.566l0.577,0.342c2.422,1.438,5.2,2.198,8.032,2.199h0.006c8.698,0,15.777-7.077,15.78-15.776C39.795,19.778,38.156,15.814,35.176,12.832z"/>
+                                    <path fill="#fff" fill-rule="evenodd"
+                                          d="M19.268,16.045c-0.355-0.79-0.729-0.806-1.068-0.82c-0.277-0.012-0.593-0.011-0.909-0.011c-0.316,0-0.83,0.119-1.265,0.594c-0.435,0.475-1.661,1.622-1.661,3.956c0,2.334,1.7,4.59,1.937,4.906c0.237,0.316,3.282,5.259,8.104,7.161c4.007,1.58,4.823,1.266,5.693,1.187c0.87-0.079,2.807-1.147,3.202-2.255c0.395-1.108,0.395-2.057,0.277-2.255c-0.119-0.198-0.435-0.316-0.909-0.554s-2.807-1.385-3.242-1.543c-0.435-0.158-0.751-0.237-1.068,0.238c-0.316,0.474-1.225,1.543-1.502,1.859c-0.277,0.317-0.554,0.357-1.028,0.119c-0.474-0.238-2.002-0.738-3.815-2.354c-1.41-1.257-2.362-2.81-2.639-3.285c-0.277-0.474-0.03-0.731,0.208-0.968c0.213-0.213,0.474-0.554,0.712-0.831c0.237-0.277,0.316-0.475,0.474-0.791c0.158-0.317,0.079-0.594-0.04-0.831C20.612,19.329,19.69,16.983,19.268,16.045z"
+                                          clip-rule="evenodd"/>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </address>
+    </div>
+</footer>
+</body>
+
+<script>
+    // Массивы изображений для домов
+    const houses = {
+        "house-1": [
+            "img/our-houses-img-1.jpg",
+            "img/gallery-img-11.jpg",
+            "img/gallery-img-12.jpg",
+            "img/gallery-img-13.jpg",
+            "img/gallery-img-14.jpg",
+            "img/gallery-img-15.jpg",
+            "img/gallery-img-16.jpg",
+            "img/gallery-img-17.jpg",
+            "img/gallery-img-18.jpg",
+            "img/gallery-img-19.jpg",
+            "img/gallery-img-20.jpg"
+        ],
+        "house-2": [
+            "img/our-houses-img-2.jpg",
+            "img/gallery-img-1.jpg",
+            "img/gallery-img-2.jpg",
+            "img/gallery-img-3.jpg",
+            "img/gallery-img-4.jpg",
+            "img/gallery-img-5.jpg",
+            "img/gallery-img-6.jpg",
+            "img/gallery-img-7.jpg",
+            "img/gallery-img-8.jpg",
+            "img/gallery-img-9.jpg",
+            "img/gallery-img-10.jpg"
+        ]
+    };
+
+    const galleryImages = document.querySelectorAll('.gallery__img');
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modal-img');
+    const closeBtn = document.querySelector('.close');
+    const prevBtn = document.querySelector('.prev');
+    const nextBtn = document.querySelector('.next');
+
+    let currentHouse = "";
+    let currentIndex = 0;
+
+    // Открытие модального окна при клике на изображение
+    galleryImages.forEach(img => {
+        img.addEventListener('click', () => {
+            currentHouse = img.dataset.house;  // Определяем, на какой дом кликнули
+            currentIndex = houses[currentHouse].indexOf(img.getAttribute('src'));  // Получаем индекс изображения
+            openModal();  // Открываем модальное окно
+        });
+    });
+
+    // Функция для открытия модального окна
+    function openModal() {
+        modal.style.display = 'flex';
+        modalImg.src = houses[currentHouse][currentIndex];  // Показываем текущее изображение
+    }
+
+    // Закрытие модального окна
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+
+    // Переключение изображений по стрелкам
+    function changeImage(direction) {
+        currentIndex += direction;
+        if (currentIndex < 0) currentIndex = houses[currentHouse].length - 1;  // Зацикливаем на первом изображении
+        if (currentIndex >= houses[currentHouse].length) currentIndex = 0;  // Зацикливаем на последнем изображении
+        modalImg.src = houses[currentHouse][currentIndex];  // Обновляем изображение
+    }
+
+    // Обработчики событий для кнопок
+    closeBtn.addEventListener('click', closeModal);
+    prevBtn.addEventListener('click', () => changeImage(-1)); // Переключение на предыдущее изображение
+    nextBtn.addEventListener('click', () => changeImage(1));  // Переключение на следующее изображение
+
+    // Закрытие модального окна при клике вне изображения
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) closeModal();
+    });
+
+    // Листание изображений с помощью клавиатуры (← и →)
+    document.addEventListener('keydown', (event) => {
+        if (modal.style.display === 'flex') {
+            if (event.key === 'ArrowLeft') changeImage(-1);
+            if (event.key === 'ArrowRight') changeImage(1);
+            if (event.key === 'Escape') closeModal();  // Закрытие модалки с клавиатуры
+        }
+    });
+
+
+</script>
+</html>

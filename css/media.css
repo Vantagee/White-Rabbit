@@ -1,0 +1,147 @@
+@media (max-width: 1440px) {
+    .container {
+        padding: 0 30px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .header__nav {
+        order: 1;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .header__container {
+        flex-wrap: wrap;
+        row-gap: var(--gap);
+    }
+
+    .header__logo-link {
+        margin-right: auto;
+    }
+
+    .header__list {
+        justify-self: center;
+    }
+
+    .header {
+        padding: 20px 0;
+    }
+}
+
+@media (max-width: 920px) {
+    .our-houses__list {
+        flex-wrap: wrap;
+    }
+
+    .our-houses__list-item {
+        width: 100%;
+    }
+
+    .block-2 {
+        display: none;
+    }
+
+    .footer {
+        background-position: center 254px;
+        padding: 40px 0 110px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .header__logo {
+        width: 130px;
+    }
+
+    .section-link {
+        width: 200px;
+        height: 36px;
+        font-size: 15px;
+    }
+
+    .header__item-link {
+        font-size: 17px;
+    }
+
+    .hero__title {
+        font-size: 35px;
+    }
+
+    .hero__descr {
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 25px;
+    }
+
+    .about-us__descr {
+        font-size: 16px;
+    }
+
+    .our-houses__sub-subtitle {
+        font-size: 23px;
+    }
+
+    .our-houses__descr {
+        font-size: 16px;
+    }
+
+    .footer__sub-subtitle {
+        font-size: 23px;
+    }
+
+    .footer__sub-sub-subtitle {
+        font-size: 20px;
+    }
+}
+
+
+@media (max-width: 576px) {
+    .header__nav {
+        order: 1;
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .header__list {
+        overflow-x: scroll;
+        justify-self: normal;
+        overflow-y: hidden;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 520px) {
+    .footer__list {
+        flex-direction: column;
+        justify-content: normal;
+        gap: var(--gap);
+    }
+
+    .footer {
+        background-position: center 394px;
+    }
+
+    .header__link {
+        display: none;
+    }
+
+    .header__logo-link {
+        margin-right: 0;
+    }
+
+    .header__container {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 375px) {
+    .footer {
+        background-size: 283px;
+        background-position: center 440px;
+    }
+}

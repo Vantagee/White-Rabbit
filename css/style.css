@@ -1,0 +1,376 @@
+@font-face {
+    font-family: "OpenSans";
+    src: local("OpenSansBold"), local("OpenSans-Bold"),
+    url("/fonts/OpenSans-Bold.woff2") format("woff2"),
+    url("/fonts/OpenSans-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "OpenSans";
+    src: local("OpenSansRegular"), local("OpenSans-Regular"),
+    url("/fonts/OpenSans-Regular.woff2") format("woff2"),
+    url("/fonts/OpenSans-Regular.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+body {
+    min-width: 320px;
+    font-family: OpenSans, sans-serif;
+}
+
+.gallery__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery__img:hover {
+    transform: scale(1.05);
+}
+
+.section {
+    margin-bottom: 80px;
+}
+
+:root {
+    --white: #fff;
+    --light-gray: #f5f5f5;
+    --beige: #ecbf88;
+    --beige-light: #f2d1a8;
+    --beige-dark: #c99b6d;
+    --dark-blue: #2a4a67;
+    --dark-gray: #333333;
+    --gap: 30px;
+}
+
+.section-link:focus-visible {
+    outline: none;
+    border: 2px solid var(--beige);
+    background-color: var(--beige-dark);
+}
+
+.section-link:hover:not(:focus-visible) {
+    background-color: var(--beige-light);
+}
+
+.section-link:active:not(:focus-visible) {
+    background-color: var(--beige-dark);
+}
+
+.section-title {
+    margin: 0 0 30px 0;
+    color: var(--beige);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.section-link {
+    background-color: var(--beige);
+    color: var(--white);
+    border-radius: 20px;
+    width: 270px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 42px;
+    font-size: 20px;
+}
+
+p {
+    margin: 0;
+}
+
+.flex {
+    display: flex;
+}
+
+/*header*/
+
+.header__logo {
+    width: 150px;
+}
+
+.header__logo-link {
+    margin-right: 100px;
+}
+
+.header__nav {
+    margin-right: auto;
+}
+
+.header__list {
+    gap: var(--gap);
+}
+
+.header__container {
+    min-height: 100px;
+    align-items: center;
+}
+
+.header__list-item {
+    white-space: nowrap;
+}
+
+.header__item-link {
+    color: var(--beige);
+    font-size: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.header__item-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    transition: width 0.3s ease, left 0.3s ease;
+    background-color: var(--beige-light);
+}
+
+.header__item-link:focus-visible {
+    outline-offset: 2px;
+    outline: 2px solid var(--beige);
+    color: var(--beige-dark);
+}
+
+.header__item-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.header__item-link:hover:not(:focus-visible) {
+    color: var(--beige-light);
+}
+
+.header__item-link:active::after {
+    background-color: var(--beige-dark);
+}
+
+.header__item-link:active:not(:focus-visible) {
+    color: var(--beige-dark);
+}
+
+/*hero*/
+
+.hero__section {
+    background-image: url("../img/hero__bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+    padding: 50px 0;
+    background-position: right center;
+    position: relative;
+}
+
+.hero__section::after {
+    content: "";
+    position: absolute;
+    opacity: .8;
+    top: 27px;
+    left: 0;
+    bottom: 27px;
+    right: 0;
+    background: linear-gradient(to right, #222 0%, #555 40%, #aaa 100%);
+
+
+}
+
+.hero__container {
+    z-index: 1000;
+    position: relative;
+}
+
+.hero__title {
+    max-width: 400px;
+    color: var(--beige);
+    font-size: 40px;
+}
+
+.hero__descr {
+    line-height: 25px;
+    color: #fff;
+    max-width: 855px;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+/*about-us*/
+.about-us__descr {
+    color: var(--dark-blue);
+    line-height: 25px;
+    font-size: 18px;
+}
+
+.about-us__descr-part {
+    display: block;
+}
+
+.about-us__descr-part:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+/*our-houses*/
+
+.our-houses__list {
+    gap: var(--gap);
+}
+
+.our-houses__list-item {
+    border-radius: 8px;
+    background-color: var(--light-gray);
+    overflow: hidden;
+    width: 50%;
+}
+
+.our-houses__img {
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.our-houses__img:hover {
+    transform: none;
+}
+
+.our-houses__sub-subtitle {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.our-houses__descr {
+    font-size: 18px;
+    color: var(--dark-blue);
+    margin-bottom: 20px;
+}
+
+.our-houses__wrapper {
+    padding: 0 20px 20px 20px;
+}
+
+/* Стиль модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close, .prev, .next {
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.close { top: 10px; right: 20px; }
+.prev { left: 20px; }
+.next { right: 20px; }
+
+/*footer*/
+
+.footer {
+    background-image: url("../img/footer__bg.svg");
+    background-repeat: no-repeat;
+    background-size: 429px;
+    background-position: center 214px;
+    background-color: var(--light-gray);
+    padding: 40px 0 70px 0;
+}
+
+.footer__list {
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.footer__list-block-1 {
+    padding-left: 10px;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer__list-block-3 {
+    gap: 12px;
+}
+
+.footer__subtitle {
+    margin-bottom: 50px;
+}
+
+.footer__sub-subtitle {
+    font-size: 25px;
+}
+
+.footer__sub-sub-subtitle {
+    font-size: 20px;
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+}
+
+.footer__num {
+    color: var(--beige);
+}
+
+.footer__num:focus-visible {
+    outline-offset: 2px;
+    outline: 2px solid var(--beige);
+}
+
+.footer__num:hover:not(:focus-visible) {
+    color: var(--beige-light);
+}
+
+.footer__num:active:not(:focus-visible) {
+    color: var(--beige-dark);
+}
+
+.footer__address {
+    color: var(--dark-blue);
+}
