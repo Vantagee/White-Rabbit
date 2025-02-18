@@ -126,16 +126,13 @@
         background-position: center 394px;
     }
 
+    .header__logo {
+        width: 100px;
+    }
+
     .header__link {
-        display: none;
-    }
-
-    .header__logo-link {
-        margin-right: 0;
-    }
-
-    .header__container {
-        justify-content: center;
+        width: 140px;
+        font-size: 14px;
     }
 }
 
