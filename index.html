@@ -10,6 +10,45 @@
 
     <link rel="preload" href="/fonts/OpenSans-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" href="/fonts/OpenSans-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+    <!-- start TL head script -->
+    <script type='text/javascript'>
+        (function (w) {
+            var q = [
+                ["setContext", "TL-INT-vantagee-github-io_2025-02-14", "ru"],
+                ["embed", "search-form", {
+                    container: "tl-search-form"
+                }]
+            ];
+            var h = ["ru-ibe.tlintegration.ru", "ibe.tlintegration.ru", "ibe.tlintegration.com"];
+            var t = w.travelline = (w.travelline || {}),
+                ti = t.integration = (t.integration || {});
+            ti.__cq = ti.__cq ? ti.__cq.concat(q) : q;
+            if (!ti.__loader) {
+                ti.__loader = true;
+                var d = w.document, c = d.getElementsByTagName("head")[0] || d.getElementsByTagName("body")[0];
+
+                function e(s, f) {
+                    return function () {
+                        w.TL || (c.removeChild(s), f())
+                    }
+                }
+
+                (function l(h) {
+                    if (0 === h.length) return;
+                    var s = d.createElement("script");
+                    s.type = "text/javascript";
+                    s.async = !0;
+                    s.src = "https://" + h[0] + "/integration/loader.js";
+                    s.onerror = s.onload = e(s, function () {
+                        l(h.slice(1, h.length))
+                    });
+                    c.appendChild(s)
+                })(h);
+            }
+        })(window);
+    </script>
+    <!-- end TL head script -->
 </head>
 
 <body>
@@ -47,7 +86,7 @@
             </ul>
         </nav>
 
-        <a href="#" class="section-link header__link">
+        <a href="#reservation" class="section-link header__link">
             Забронировать
         </a>
     </div>
@@ -80,6 +119,22 @@
             <a href="#reservation" class="section-link hero__link">
                 Забронировать
             </a>
+        </div>
+    </section>
+
+    <section class="section reservation__section" id="reservation">
+        <div class="container">
+            <!-- start TL Search form script -->
+            <div id="block-search">
+                <div id="tl-search-form" class="tl-container">
+                    <noindex>
+                        <a href="https://www.travelline.ru/products/tl-hotel/" rel="nofollow" target="_blank">
+                            TravelLine
+                        </a>
+                    </noindex>
+                </div>
+            </div>
+            <!-- end TL Search form script -->
         </div>
     </section>
 
@@ -140,7 +195,10 @@
                             природой и тишиной у озера, создавая незабываемые моменты в этом необычном доме.
                         </p>
 
-                        <a href="#reservation" class="section-link our-houses__link">Забронировать</a>
+                        <a href="#" data-tl-booking-open="true" data-tl-room="258798"
+                           class="section-link our-houses__link">
+                            Забронировать
+                        </a>
                     </div>
                 </li>
 
@@ -159,7 +217,7 @@
                     </div>
 
                     <div class="our-houses__wrapper">
-                        <h3 class="section-title our-houses__sub-subtitle">Дом с баней</h3>
+                        <h3  class="section-title our-houses__sub-subtitle">Дом с баней</h3>
 
                         <p class="our-houses__descr">
                             Дом с баней у озера – идеален для отдыха до 5 человек. В доме есть
@@ -167,15 +225,11 @@
                             озера и комфортом, который обеспечит этот уютный уголок для отдыха.
                         </p>
 
-                        <a href="#reservation" class="section-link our-houses__link">Забронировать</a>
+                        <a href="#" data-tl-booking-open="true" data-tl-room="290761" class="section-link our-houses__link">Забронировать</a>
                     </div>
                 </li>
             </ul>
         </div>
-    </section>
-
-    <section class="section reservation__section" id="reservation">
-
     </section>
 </main>
 
@@ -433,14 +487,5 @@
         // Обновляем изображение
         img.src = houses[currentHouse][currentIndex];
     }
-
-
-
-
-
-
-
-
-
 </script>
 </html>

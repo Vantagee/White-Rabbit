@@ -181,6 +181,7 @@ p {
     padding: 50px 0;
     background-position: right center;
     position: relative;
+    margin-bottom: 0;
 }
 
 .hero__section::after {
@@ -325,10 +326,35 @@ p {
     user-select: none;
 }
 
-.close { top: 10px; right: 20px; }
-.prev { left: 20px; }
-.next { right: 20px; }
+.close {
+    top: 10px;
+    right: 20px;
+}
 
+.prev {
+    left: 20px;
+}
+
+.next {
+    right: 20px;
+}
+
+/*reservation*/
+
+#block-search,
+#block-search * {
+    box-sizing: border-box;
+}
+
+.reservation__section {
+    background-color: #f5f5f5;
+}
+
+.tl-container {
+    padding: 0 25px;
+    max-width: 1490px;
+    margin: 0 auto;
+}
 
 /*footer*/
 
