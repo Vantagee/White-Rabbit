@@ -59,8 +59,7 @@
         .swiper {
             width: 100%;
             max-width: 1200px;
-            height: 700px;
-            margin-bottom: 50px;
+            height: 1000px;
             border-radius: 15px;
             overflow: hidden;
         }
@@ -83,10 +82,6 @@
 
         .swiper-button-next, .swiper-button-prev {
             color: white;
-        }
-
-        .swiper-pagination-bullet-active {
-            background-color: white;
         }
 
         /* Модальное окно */
@@ -133,7 +128,7 @@
         /* Адаптив для мобилок */
         @media (max-width: 768px) {
             .swiper {
-                height: 500px;
+                height: 900px;
             }
         }
     </style>
@@ -248,21 +243,21 @@
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
                         <div class="swiper-pagination"></div>
-                    </div>
 
-                    <div class="our-houses__wrapper">
-                        <h3 class="section-title our-houses__sub-subtitle">Дом шалаш</h3>
+                        <div class="our-houses__wrapper">
+                            <h3 class="section-title our-houses__sub-subtitle">Дом шалаш</h3>
 
-                        <p class="our-houses__descr">
-                            Шалаш у озера – уютное место для отдыха до 3 человек. В нем есть
-                            купель для расслабления и место для приятных посиделок на свежем воздухе. Наслаждайтесь
-                            природой и тишиной у озера, создавая незабываемые моменты в этом необычном доме.
-                        </p>
+                            <p class="our-houses__descr">
+                                Шалаш у озера – уютное место для отдыха до 3 человек. В нем есть
+                                купель для расслабления и место для приятных посиделок на свежем воздухе. Наслаждайтесь
+                                природой и тишиной у озера, создавая незабываемые моменты в этом необычном доме.
+                            </p>
 
-                        <a href="#" data-tl-booking-open="true" data-tl-room="258798"
-                           class="section-link our-houses__link">
-                            Забронировать
-                        </a>
+                            <a href="#" data-tl-booking-open="true" data-tl-room="258798"
+                               class="section-link our-houses__link">
+                                Забронировать
+                            </a>
+                        </div>
                     </div>
                 </li>
 
@@ -304,19 +299,19 @@
                         <div class="swiper-button-prev"></div>
                         <div class="swiper-button-next"></div>
                         <div class="swiper-pagination"></div>
-                    </div>
 
-                    <div class="our-houses__wrapper">
-                        <h3 class="section-title our-houses__sub-subtitle">Дом с баней</h3>
+                        <div class="our-houses__wrapper">
+                            <h3 class="section-title our-houses__sub-subtitle">Дом с баней</h3>
 
-                        <p class="our-houses__descr">
-                            Дом с баней у озера – идеален для отдыха до 5 человек. В доме есть
-                            уютная баня, терраса для шашлыков и место для парковки автомобиля. Наслаждайтесь природой у
-                            озера и комфортом, который обеспечит этот уютный уголок для отдыха.
-                        </p>
+                            <p class="our-houses__descr">
+                                Дом с баней у озера – идеален для отдыха до 5 человек. В доме есть
+                                уютная баня, терраса для шашлыков и место для парковки автомобиля. Наслаждайтесь природой у
+                                озера и комфортом, который обеспечит этот уютный уголок для отдыха.
+                            </p>
 
-                        <a href="#" data-tl-booking-open="true" data-tl-room="290761"
-                           class="section-link our-houses__link">Забронировать</a>
+                            <a href="#" data-tl-booking-open="true" data-tl-room="290761"
+                               class="section-link our-houses__link">Забронировать</a>
+                        </div>
                     </div>
                 </li>
             </ul>
@@ -511,10 +506,6 @@
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
             },
         });
 

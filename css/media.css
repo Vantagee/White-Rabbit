@@ -86,11 +86,11 @@
     }
 
     .our-houses__sub-subtitle {
-        font-size: 23px;
+        font-size: 18px;
     }
 
     .our-houses__descr {
-        font-size: 16px;
+        font-size: 12px;
     }
 
     .footer__sub-subtitle {
@@ -99,6 +99,12 @@
 
     .footer__sub-sub-subtitle {
         font-size: 20px;
+    }
+
+    .our-houses__link {
+        width: 200px;
+        height: 28px;
+        font-size: 13px;
     }
 }
 

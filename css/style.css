@@ -243,12 +243,17 @@ p {
 
 .our-houses__descr {
     font-size: 18px;
-    color: var(--dark-blue);
+    color: var(--white);
     margin-bottom: 20px;
 }
 
 .our-houses__wrapper {
-    padding: 0 20px 20px 20px;
+    padding: 20px;
+    position: absolute;
+    z-index: 10;
+    background-color: rgba(50, 50, 50, 0.3);
+    color: white;
+    bottom: 0;
 }
 
 /* Стиль модального окна */
