@@ -6,6 +6,8 @@
     <meta name="description"
           content="Аренда домов на берегу озера Валдай. Коттеджи с баней, купелью и террасой для шашлыков. Уютный отдых на природе в городе. Бронируйте уже сейчас!">
     <title>White Rabbit</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/media.css">
@@ -51,59 +53,113 @@
         })(window);
     </script>
     <!-- end TL head script -->
+
+    <style>
+        /* Стили слайдера */
+        .swiper {
+            width: 100%;
+            max-width: 1200px;
+            height: 700px;
+            margin-bottom: 50px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .swiper-slide {
+            position: relative;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .swiper-slide img:hover {
+            transform: scale(1.02);
+        }
+
+        .swiper-button-next, .swiper-button-prev {
+            color: white;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: white;
+        }
+
+        /* Модальное окно */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 10000000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+            transition: 0.3s;
+            fill: #eee;
+            width: 24px;
+            height: 24px;
+        }
+
+        .close-btn:hover {
+            color: #ff6b6b;
+        }
+
+        /* Адаптив для мобилок */
+        @media (max-width: 768px) {
+            .swiper {
+                height: 500px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 <header class="header">
-    <div class="container header__container flex">
-        <a href="#" class="header__logo-link">
-            <img src="img/logo.png" alt="логотип" class="header__logo">
-        </a>
+    <div class="header__top-block" id="header-top-block">
+        <div class="header__top-block-wrapper">
+            <div class="container header__top-block-container flex">
+                <a href="#" class="header__logo-link">
+                    <img src="img/12-no-bg-preview%20(carve.photos).png" alt="логотип" class="header__logo">
+                </a>
 
-        <nav class="header__nav">
-            <ul class="header__list flex">
-                <li class="header__list-item">
-                    <a href="#about-us" class="header__item-link">
-                        О нас
-                    </a>
-                </li>
-
-                <li class="header__list-item">
-                    <a href="#our-houses" class="header__item-link">
-                        Наши дома
-                    </a>
-                </li>
-
-                <li class="header__list-item">
-                    <a href="#reservation"  data-tl-booking-open="true" class="header__item-link">
-                        Забронировать отдых
-                    </a>
-                </li>
-
-                <li class="header__list-item">
-                    <a href="#contacts" class="header__item-link">
-                        Контакты
-                    </a>
-                </li>
-            </ul>
-        </nav>
-
-        <a href="#reservation" data-tl-booking-open="true" class="section-link header__link">
-            Забронировать
-        </a>
-    </div>
-</header>
-
-<main class="main">
-    <div id="modal" class="modal">
-        <span class="close">&times;</span>
-        <img class="modal-content" id="modal-img">
-        <a class="prev">&#10094;</a>
-        <a class="next">&#10095;</a>
+                <a href="#reservation" data-tl-booking-open="true" class="section-link header__link">
+                    Забронировать
+                </a>
+            </div>
+        </div>
     </div>
 
-    <section class="section hero__section">
-        <div class="container hero__container">
+    <div class="container header__container">
+
+        <div class="header__placeholder"></div>
+
+        <div class="header__bottom-block">
             <h1 class="section-title hero__title">
                 Уют на берегу Валдайского озера
             </h1>
@@ -122,7 +178,16 @@
                 Забронировать
             </a>
         </div>
-    </section>
+    </div>
+</header>
+
+<main class="main">
+    <!--    <div id="modal" class="modal">-->
+    <!--        <span class="close">&times;</span>-->
+    <!--        <img class="modal-content" id="modal-img">-->
+    <!--        <a class="prev">&#10094;</a>-->
+    <!--        <a class="next">&#10095;</a>-->
+    <!--    </div>-->
 
     <section class="section reservation__section" id="reservation">
         <div class="container">
@@ -137,6 +202,124 @@
                 </div>
             </div>
             <!-- end TL Search form script -->
+        </div>
+    </section>
+
+    <section class="section our-houses" id="our-houses">
+        <div class="container">
+            <h2 class="section-title our-houses__subtitle">Наши дома</h2>
+
+            <ul class="our-houses__list flex">
+                <li class="our-houses__list-item">
+                    <!-- Слайдер -->
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="img/gallery-img-11.jpg" alt="Домик 11" class="gallery-img">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/gallery-img-12.jpg" alt="Домик 12" class="gallery-img">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/gallery-img-13.jpg" alt="Домик 13" class="gallery-img">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/gallery-img-14.jpg" alt="Домик 14" class="gallery-img">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/gallery-img-15.jpg" alt="Домик 15" class="gallery-img">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/gallery-img-16.jpg" alt="Домик 16" class="gallery-img">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/gallery-img-17.jpg" alt="Домик 17" class="gallery-img">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/gallery-img-18.jpg" alt="Домик 18" class="gallery-img">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/gallery-img-19.jpg" alt="Домик 19" class="gallery-img">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/gallery-img-20.jpg" alt="Домик 20" class="gallery-img">
+                            </div>
+                        </div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+
+                    <div class="our-houses__wrapper">
+                        <h3 class="section-title our-houses__sub-subtitle">Дом шалаш</h3>
+
+                        <p class="our-houses__descr">
+                            Шалаш у озера – уютное место для отдыха до 3 человек. В нем есть
+                            купель для расслабления и место для приятных посиделок на свежем воздухе. Наслаждайтесь
+                            природой и тишиной у озера, создавая незабываемые моменты в этом необычном доме.
+                        </p>
+
+                        <a href="#" data-tl-booking-open="true" data-tl-room="258798"
+                           class="section-link our-houses__link">
+                            Забронировать
+                        </a>
+                    </div>
+                </li>
+
+                <li class="our-houses__list-item">
+                    <!-- Слайдер -->
+                    <div class="swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="img/gallery-img-1.jpg" alt="Домик 1" class="gallery-img">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/gallery-img-2.jpg" alt="Домик 2" class="gallery-img">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/gallery-img-3.jpg" alt="Домик 3" class="gallery-img">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/gallery-img-4.jpg" alt="Домик 4" class="gallery-img">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/gallery-img-5.jpg" alt="Домик 5" class="gallery-img">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/gallery-img-6.jpg" alt="Домик 6" class="gallery-img">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/gallery-img-7.jpg" alt="Домик 7" class="gallery-img">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/gallery-img-8.jpg" alt="Домик 8" class="gallery-img">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/gallery-img-9.jpg" alt="Домик 9" class="gallery-img">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="img/gallery-img-10.jpg" alt="Домик 10" class="gallery-img">
+                            </div>
+                        </div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+
+                    <div class="our-houses__wrapper">
+                        <h3 class="section-title our-houses__sub-subtitle">Дом с баней</h3>
+
+                        <p class="our-houses__descr">
+                            Дом с баней у озера – идеален для отдыха до 5 человек. В доме есть
+                            уютная баня, терраса для шашлыков и место для парковки автомобиля. Наслаждайтесь природой у
+                            озера и комфортом, который обеспечит этот уютный уголок для отдыха.
+                        </p>
+
+                        <a href="#" data-tl-booking-open="true" data-tl-room="290761"
+                           class="section-link our-houses__link">Забронировать</a>
+                    </div>
+                </li>
+            </ul>
         </div>
     </section>
 
@@ -166,72 +349,6 @@
                     природа и комфорт идут рука об руку.
                 </span>
             </p>
-        </div>
-    </section>
-
-    <section class="section our-houses" id="our-houses">
-        <div class="container">
-            <h2 class="section-title our-houses__subtitle">Наши дома</h2>
-
-            <ul class="our-houses__list flex">
-                <li class="our-houses__list-item">
-                    <div class="our-houses__img-wrapper">
-                        <img src="img/our-houses-img-1.jpg" alt="Дом 1"
-                             class="gallery__img our-houses__img" data-house="house-1">
-
-                        <a class="arrow-left">
-                            &#10094
-                        </a>
-
-                        <a class="arrow-right">
-                            &#10095
-                        </a>
-                    </div>
-
-                    <div class="our-houses__wrapper">
-                        <h3 class="section-title our-houses__sub-subtitle">Дом шалаш</h3>
-
-                        <p class="our-houses__descr">
-                            Шалаш у озера – уютное место для отдыха до 3 человек. В нем есть
-                            купель для расслабления и место для приятных посиделок на свежем воздухе. Наслаждайтесь
-                            природой и тишиной у озера, создавая незабываемые моменты в этом необычном доме.
-                        </p>
-
-                        <a href="#" data-tl-booking-open="true" data-tl-room="258798"
-                           class="section-link our-houses__link">
-                            Забронировать
-                        </a>
-                    </div>
-                </li>
-
-                <li class="our-houses__list-item">
-                    <div class="our-houses__img-wrapper">
-                        <img src="img/our-houses-img-2.jpg" alt="Дом 2"
-                             class="gallery__img our-houses__img" data-house="house-2">
-
-                        <a class="arrow-left">
-                            &#10094
-                        </a>
-
-                        <a class="arrow-right">
-                            &#10095
-                        </a>
-                    </div>
-
-                    <div class="our-houses__wrapper">
-                        <h3 class="section-title our-houses__sub-subtitle">Дом с баней</h3>
-
-                        <p class="our-houses__descr">
-                            Дом с баней у озера – идеален для отдыха до 5 человек. В доме есть
-                            уютная баня, терраса для шашлыков и место для парковки автомобиля. Наслаждайтесь природой у
-                            озера и комфортом, который обеспечит этот уютный уголок для отдыха.
-                        </p>
-
-                        <a href="#" data-tl-booking-open="true" data-tl-room="290761"
-                           class="section-link our-houses__link">Забронировать</a>
-                    </div>
-                </li>
-            </ul>
         </div>
     </section>
 </main>
@@ -374,125 +491,212 @@
         </address>
     </div>
 </footer>
+
+<div id="modal" class="modal">
+    <svg class="close-btn" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100"
+         viewBox="0 0 24 24">
+        <path d="M 20.496094 2.9921875 A 0.50005 0.50005 0 0 0 20.146484 3.1464844 L 12 11.292969 L 3.8535156 3.1464844 A 0.50005 0.50005 0 0 0 3.4941406 2.9941406 A 0.50005 0.50005 0 0 0 3.1464844 3.8535156 L 11.292969 12 L 3.1464844 20.146484 A 0.50005 0.50005 0 1 0 3.8535156 20.853516 L 12 12.707031 L 20.146484 20.853516 A 0.50005 0.50005 0 1 0 20.853516 20.146484 L 12.707031 12 L 20.853516 3.8535156 A 0.50005 0.50005 0 0 0 20.496094 2.9921875 z"></path>
+    </svg>
+    <div class="modal-content">
+        <img id="modal-img" src="" alt="">
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Инициализация Swiper
+        const swiper = new Swiper('.swiper', {
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+
+        // Получаем все изображения галереи
+        const galleryImages = document.querySelectorAll('.gallery-img');
+        const modal = document.getElementById('modal');
+        const modalImg = document.getElementById('modal-img');
+        const closeBtn = document.querySelector('.close-btn');
+
+        // Открытие модального окна
+        galleryImages.forEach(img => {
+            img.addEventListener('click', function () {
+                modal.style.display = 'flex';
+                modalImg.src = this.src;
+                modalImg.alt = this.alt;
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Закрытие модального окна
+        closeBtn.addEventListener('click', function () {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        // Закрытие по клику вне изображения
+        modal.addEventListener('click', function (e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Закрытие по ESC
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    });
+</script>
 </body>
 
-<script>
-    // Массивы изображений для домов
-    const houses = {
-        "house-1": [
-            "img/our-houses-img-1.jpg",
-            "img/gallery-img-11.jpg",
-            "img/gallery-img-12.jpg",
-            "img/gallery-img-13.jpg",
-            "img/gallery-img-14.jpg",
-            "img/gallery-img-15.jpg",
-            "img/gallery-img-16.jpg",
-            "img/gallery-img-17.jpg",
-            "img/gallery-img-18.jpg",
-            "img/gallery-img-19.jpg",
-            "img/gallery-img-20.jpg"
-        ],
-        "house-2": [
-            "img/our-houses-img-2.jpg",
-            "img/gallery-img-1.jpg",
-            "img/gallery-img-2.jpg",
-            "img/gallery-img-3.jpg",
-            "img/gallery-img-4.jpg",
-            "img/gallery-img-5.jpg",
-            "img/gallery-img-6.jpg",
-            "img/gallery-img-7.jpg",
-            "img/gallery-img-8.jpg",
-            "img/gallery-img-9.jpg",
-            "img/gallery-img-10.jpg"
-        ]
-    };
+<!--<script>-->
+<!--    function preloadImages() {-->
+<!--        const allImages = [...houses["house-1"], ...houses["house-2"]];-->
+<!--        allImages.forEach(src => {-->
+<!--            const img = new Image();-->
+<!--            img.src = src;-->
+<!--        });-->
+<!--    }-->
 
-    const galleryImages = document.querySelectorAll('.gallery__img');
-    const modal = document.getElementById('modal');
-    const modalImg = document.getElementById('modal-img');
-    const closeBtn = document.querySelector('.close');
-    const prevBtn = document.querySelector('.prev');
-    const nextBtn = document.querySelector('.next');
+<!--    // Вызываем при загрузке страницы-->
+<!--    window.addEventListener('DOMContentLoaded', preloadImages);-->
 
-    let currentHouse = "";
-    let currentIndex = 0;
+<!--    // Массивы изображений для домов-->
+<!--    const houses = {-->
+<!--        "house-1": [-->
+<!--            "img/our-houses-img-1.jpg",-->
+<!--            "img/gallery-img-11.jpg",-->
+<!--            "img/gallery-img-12.jpg",-->
+<!--            "img/gallery-img-13.jpg",-->
+<!--            "img/gallery-img-14.jpg",-->
+<!--            "img/gallery-img-15.jpg",-->
+<!--            "img/gallery-img-16.jpg",-->
+<!--            "img/gallery-img-17.jpg",-->
+<!--            "img/gallery-img-18.jpg",-->
+<!--            "img/gallery-img-19.jpg",-->
+<!--            "img/gallery-img-20.jpg"-->
+<!--        ],-->
+<!--        "house-2": [-->
+<!--            "img/our-houses-img-2.jpg",-->
+<!--            "img/gallery-img-1.jpg",-->
+<!--            "img/gallery-img-2.jpg",-->
+<!--            "img/gallery-img-3.jpg",-->
+<!--            "img/gallery-img-4.jpg",-->
+<!--            "img/gallery-img-5.jpg",-->
+<!--            "img/gallery-img-6.jpg",-->
+<!--            "img/gallery-img-7.jpg",-->
+<!--            "img/gallery-img-8.jpg",-->
+<!--            "img/gallery-img-9.jpg",-->
+<!--            "img/gallery-img-10.jpg"-->
+<!--        ]-->
+<!--    };-->
 
-    // Открытие модального окна при клике на изображение
-    galleryImages.forEach(img => {
-        img.addEventListener('click', () => {
-            currentHouse = img.dataset.house;
-            currentIndex = houses[currentHouse].indexOf(img.getAttribute('src'));
-            openModal();
-        });
-    });
+<!--    const galleryImages = document.querySelectorAll('.gallery__img');-->
+<!--    const modal = document.getElementById('modal');-->
+<!--    const modalImg = document.getElementById('modal-img');-->
+<!--    const header = document.getElementById("header-top-block")-->
+<!--    const closeBtn = document.querySelector('.close');-->
+<!--    const prevBtn = document.querySelector('.prev');-->
+<!--    const nextBtn = document.querySelector('.next');-->
 
-    // Функция для открытия модального окна
-    function openModal() {
-        modal.style.display = 'flex';
-        modalImg.src = houses[currentHouse][currentIndex];
-    }
+<!--    let currentHouse = "";-->
+<!--    let currentIndex = 0;-->
 
-    // Закрытие модального окна
-    function closeModal() {
-        modal.style.display = 'none';
-    }
+<!--    // Открытие модального окна при клике на изображение-->
+<!--    galleryImages.forEach(img => {-->
+<!--        img.addEventListener('click', () => {-->
+<!--            currentHouse = img.dataset.house;-->
+<!--            currentIndex = houses[currentHouse].indexOf(img.getAttribute('src'));-->
+<!--            header.classList.add("invisible")-->
+<!--            openModal();-->
+<!--        });-->
+<!--    });-->
 
-    // Переключение изображений в модальном окне
-    function changeImage(direction) {
-        currentIndex += direction;
-        if (currentIndex < 0) currentIndex = houses[currentHouse].length - 1;
-        if (currentIndex >= houses[currentHouse].length) currentIndex = 0;
-        modalImg.src = houses[currentHouse][currentIndex];
-    }
+<!--    // Функция для открытия модального окна-->
+<!--    function openModal() {-->
+<!--        modal.style.display = 'flex';-->
+<!--        modalImg.src = houses[currentHouse][currentIndex];-->
+<!--    }-->
 
-    // Обработчики событий для кнопок в модальном окне
-    closeBtn.addEventListener('click', closeModal);
-    prevBtn.addEventListener('click', () => changeImage(-1));
-    nextBtn.addEventListener('click', () => changeImage(1));
+<!--    // Закрытие модального окна-->
+<!--    function closeModal() {-->
+<!--        modal.style.display = 'none';-->
+<!--    }-->
 
-    // Закрытие модального окна при клике вне изображения
-    window.addEventListener('click', (event) => {
-        if (event.target === modal) closeModal();
-    });
+<!--    function removeInvisible() {-->
+<!--        header.classList.remove("invisible")-->
+<!--    }-->
 
-    // Листание изображений с помощью клавиатуры
-    document.addEventListener('keydown', (event) => {
-        if (modal.style.display === 'flex') {
-            if (event.key === 'ArrowLeft') changeImage(-1);
-            if (event.key === 'ArrowRight') changeImage(1);
-            if (event.key === 'Escape') closeModal();
-        }
-    });
+<!--    // Переключение изображений в модальном окне-->
+<!--    function changeImage(direction) {-->
+<!--        currentIndex += direction;-->
+<!--        if (currentIndex < 0) currentIndex = houses[currentHouse].length - 1;-->
+<!--        if (currentIndex >= houses[currentHouse].length) currentIndex = 0;-->
+<!--        modalImg.src = houses[currentHouse][currentIndex];-->
+<!--    }-->
 
-    // Переключение изображений с помощью стрелок на странице
-    const houseImagesWrappers = document.querySelectorAll('.our-houses__img-wrapper');
+<!--    // Обработчики событий для кнопок в модальном окне-->
+<!--    closeBtn.addEventListener('click', closeModal);-->
+<!--    closeBtn.addEventListener('click', removeInvisible);-->
+<!--    prevBtn.addEventListener('click', () => changeImage(-1));-->
+<!--    nextBtn.addEventListener('click', () => changeImage(1));-->
 
-    houseImagesWrappers.forEach(wrapper => {
-        const leftArrow = wrapper.querySelector('.arrow-left');
-        const rightArrow = wrapper.querySelector('.arrow-right');
-        const img = wrapper.querySelector('.gallery__img');
+<!--    // Закрытие модального окна при клике вне изображения-->
+<!--    window.addEventListener('click', (event) => {-->
+<!--        if (event.target === modal) {-->
+<!--            closeModal();-->
+<!--            removeInvisible();-->
+<!--        }-->
+<!--    });-->
 
-        leftArrow.addEventListener('click', () => {
-            changeImageOnPage(wrapper, -1);
-        });
+<!--    // Листание изображений с помощью клавиатуры-->
+<!--    document.addEventListener('keydown', (event) => {-->
+<!--        if (modal.style.display === 'flex') {-->
+<!--            if (event.key === 'ArrowLeft') changeImage(-1);-->
+<!--            if (event.key === 'ArrowRight') changeImage(1);-->
+<!--            if (event.key === 'Escape') closeModal();-->
+<!--        }-->
+<!--    });-->
 
-        rightArrow.addEventListener('click', () => {
-            changeImageOnPage(wrapper, 1);
-        });
-    });
+<!--    // Переключение изображений с помощью стрелок на странице-->
+<!--    const houseImagesWrappers = document.querySelectorAll('.our-houses__img-wrapper');-->
 
-    // Переключение изображений на странице
-    function changeImageOnPage(wrapper, direction) {
-        const img = wrapper.querySelector('.gallery__img');
-        currentHouse = img.dataset.house;
-        currentIndex = houses[currentHouse].indexOf(img.getAttribute('src'));
-        currentIndex += direction;
+<!--    houseImagesWrappers.forEach(wrapper => {-->
+<!--        const leftArrow = wrapper.querySelector('.arrow-left');-->
+<!--        const rightArrow = wrapper.querySelector('.arrow-right');-->
+<!--        const img = wrapper.querySelector('.gallery__img');-->
 
-        if (currentIndex < 0) currentIndex = houses[currentHouse].length - 1;
-        if (currentIndex >= houses[currentHouse].length) currentIndex = 0;
+<!--        leftArrow.addEventListener('click', () => {-->
+<!--            changeImageOnPage(wrapper, -1);-->
+<!--        });-->
 
-        // Обновляем изображение
-        img.src = houses[currentHouse][currentIndex];
-    }
-</script>
+<!--        rightArrow.addEventListener('click', () => {-->
+<!--            changeImageOnPage(wrapper, 1);-->
+<!--        });-->
+<!--    });-->
+
+<!--    // Переключение изображений на странице-->
+<!--    function changeImageOnPage(wrapper, direction) {-->
+<!--        const img = wrapper.querySelector('.gallery__img');-->
+<!--        currentHouse = img.dataset.house;-->
+<!--        currentIndex = houses[currentHouse].indexOf(img.getAttribute('src'));-->
+<!--        currentIndex += direction;-->
+
+<!--        if (currentIndex < 0) currentIndex = houses[currentHouse].length - 1;-->
+<!--        if (currentIndex >= houses[currentHouse].length) currentIndex = 0;-->
+
+<!--        // Обновляем изображение-->
+<!--        img.src = houses[currentHouse][currentIndex];-->
+<!--    }-->
+<!--</script>-->
 </html>

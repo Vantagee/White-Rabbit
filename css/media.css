@@ -25,7 +25,7 @@
     }
 
     .header {
-        padding: 20px 0;
+        padding-bottom: 20px;
     }
 }
 
@@ -57,6 +57,12 @@
         width: 200px;
         height: 36px;
         font-size: 15px;
+    }
+
+    .header__link {
+        width: 220px;
+        height: 46px;
+        font-size: 19px;
     }
 
     .header__item-link {
@@ -122,6 +128,10 @@
         gap: var(--gap);
     }
 
+    .header__placeholder {
+        min-height: 160px;
+    }
+
     .footer {
         background-position: center 394px;
     }
@@ -133,6 +143,10 @@
     .header__link {
         width: 140px;
         font-size: 14px;
+    }
+
+    .header__top-block {
+        padding: 15px 0;
     }
 }
 
